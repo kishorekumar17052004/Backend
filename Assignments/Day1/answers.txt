@@ -1,0 +1,52 @@
+1. What is JavaScript?
+   JavaScript is a high-level, interpreted programming language 
+it is used to make web pages interactive and dynamic.
+
+2. Why was JavaScript created?
+   1.Add interactivity to web pages.
+   2.Reduce communication with the server.
+   3.Improve user experience in browsers.
+
+3. Is JavaScript interpreted or compiled?
+   JavaScript is a JIT-compiled language. 
+Modern engines both interpret and compile code for better performance.
+
+4.What are the features of JavaScript?
+  light-weight , dynamic typing, object-oriented, event-Driven, Asynchronous Programming,Interpreted/JIT Compiled
+
+5.Why is JavaScript called a single-threaded language?
+  JavaScript executes one task at a time using a single Call Stack.
+console.log("A");
+console.log("B");
+console.log("C");
+It executes line by line.
+
+6.What is the difference between JavaScript and Java?
+  Different syntax, runtime, and type systems. JS is dynamic and runs in engines, Java is statically typed and runs on the JVM.
+
+7.What is ECMAScript?
+  The standard that defines the core JavaScript language.
+  ES6 :
+  let name = "Kishore";
+
+const age = 22;
+
+const greet = () => {
+    console.log("Hello");
+};  
+
+8.What is the role of a JavaScript Engine?
+  A JavaScript Engine role is  Reads JavaScript code, Parses code,Converts it to machine code,
+Executes the code. Without a JavaScript engine, browsers cannot run JavaScript
+
+9.What is V8 Engine?
+  V8 is Google's JavaScript engine used in
+   google chrome 
+   node.js
+
+10.How does JavaScript execute code?
+   JavaScript execution happens in two phases
+    1.Memory Creation Phase
+    2.Execution Phase
+ During memory creation, variables and functions are stored in memory. 
+ During execution, code runs line by line using the Call Stack.

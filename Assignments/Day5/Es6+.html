@@ -1,0 +1,273 @@
+<script>
+// Task 1
+ const student = {
+    name:"kishore",
+    course:"full stack",
+    city:"chennai",
+    institute:"SLA"
+
+
+
+ }
+
+ console.log(` ${student.name} , ${student.course} ,${student.city},${student.institute} `);
+
+ //Task 2
+ const employee = ()=>{
+    const details = {
+         name:"kishore",
+         age:22,
+    }
+    let salary = 5000;
+  let yearlySalary = salary*12;
+  console.log(` yearlysalary is ${yearlySalary} , name: ${details.name},  age:  ${details.age}`);
+  
+     
+ }
+ employee();
+
+
+ //Task 3
+const product = ()=>{
+  let productPrice = 500;
+  let discount = 100/20;
+  let discountPrice = productPrice / discount;
+   console.log(discountPrice)
+
+
+
+}
+product();  
+
+//Task 4
+const register = (userName = "kishore")=>{
+
+    if(userName != "kishore"){
+
+        return "not a vaild user"
+    }
+else{
+    return "Vaild user"
+}
+
+
+}
+let login = register();
+console.log(login);
+
+
+// Task 5
+ const  shoppingCart = (...product)=>{
+
+   let total = product.reduce((acc,product)=>product+acc,0)
+  return total ;
+
+ }
+let bill = shoppingCart(500,600,800,1000);
+console.log(bill);
+
+//Task 6
+const course = ()=>{
+  let frontend =["html","css"];
+  let backend = ["node.js","react"];
+   
+  let merge = [...frontend,...backend];
+  console.log(merge);
+  
+}
+course();
+
+// Task 7
+const worker = ()=>{
+
+let obj = {
+   name:"kishore",
+   age:21
+
+}
+console.log(obj.name , obj.age);
+
+
+let copy = {...obj};
+  copy.name="react";
+
+  console.log( copy );
+  
+}
+worker();
+
+//Task 8 
+const studentDetails = ()=>{
+  let obj={
+     name:"kishore",
+     age:22,
+     institute:"sla"
+  }
+   let {name , age,institute} = obj;
+
+  console.log(name , age, institute);
+  
+} 
+studentDetails();
+
+// Task 9 
+const name = "Kishore";
+const age = 22;
+const city = "Chennai";
+
+const person = { name, age, city };
+
+console.log(person);
+
+//Task 10
+const user = {
+  id: 101,
+  name: "Kishore",
+  profile: {
+    address: {
+      city1: "Chennai",
+      state: "Tamil Nadu"
+    }
+  }
+};
+
+const userName = user?.name ?? "Guest";
+const city1 = user?.profile?.address?.city ?? "City Not Available";
+const state = user?.profile?.address?.state ?? "State Not Available";
+const country = user?.profile?.address?.country ?? "Country Not Available";
+
+console.log("----- User Dashboard -----");
+console.log("Name:", userName);
+console.log("City:", city);
+console.log("State:", state);
+console.log("Country:", country);
+
+// Task 11 
+const getHighestMark = (...marks)=> {
+    let highest = marks[0];
+
+    for (let i = 1; i < marks.length; i++) {
+        if (marks[i] > highest) {
+            highest = marks[i];
+        }
+    }
+
+    return highest;
+}
+
+console.log(getHighestMark(85, 92, 78, 96, 88));
+
+// Task 12
+ const mergeCourses = (...courseArrays)=> {
+    let merged = [];
+
+    for (let courses of courseArrays) {
+        merged = [...merged, ...courses];
+    }
+
+    return merged;
+}
+
+console.log(
+    mergeCourses(
+        ["HTML", "CSS"],
+        ["JavaScript", "React"],
+        ["Node.js", "MongoDB"]
+    )
+);
+
+// Task 13 
+const  updateStock = (product, newStock)=> {
+    const updatedProduct = {
+        ...product,
+        stock: newStock
+    };
+
+    return updatedProduct;
+}
+
+const products = {
+    id: 101,
+    name: "Laptop",
+    price: 50000,
+    stock: 10
+};
+
+const updatedProduct = updateStock(products, 25);
+
+console.log("Original Product:", products);
+console.log("Updated Product:", updatedProduct);
+
+// Task 14
+const  displayUserInfo=(user)=> {
+    const { id, name, age, city } = user;
+
+    console.log(`
+
+ID   : ${id}
+Name : ${name}
+Age  : ${age}
+City : ${city}
+`);
+}
+
+const users = {
+    id: 101,
+    name: "Kishore",
+    age: 22,
+    city: "Chennai"
+};
+
+displayUserInfo(users);
+
+// Task 15
+let employees = [];
+
+const addEmployee = (id, name, salary = 0) => {
+    const employee = { id, name, salary };
+
+    employees = [...employees, employee];
+    console.log(`${name} added successfully`);
+};
+
+
+const updateEmployee = (id, newSalary) => {
+    employees = employees.map(emp =>
+        emp.id === id ? { ...emp, salary: newSalary } : emp
+    );
+};
+
+
+const displayEmployee = (id) => {
+    const employee = employees.find(emp => emp.id === id);
+
+    const {
+        name = "Unknown",
+        salary = 0
+    } = employee ?? {}; 
+
+    console.log(`Name: ${name}, Salary: ₹${salary}`);
+};
+
+// Calculate Salary
+const calculateSalary = (...amounts) => {
+    let total = 0;
+
+    for (let amount of amounts) {
+        total += amount;
+    }
+
+    return total;
+};
+
+addEmployee(1, "Kishore", 50000);
+
+displayEmployee(1);
+
+updateEmployee(1, 60000);
+
+displayEmployee(1);
+
+console.log(`Total Salary: ₹${calculateSalary(60000, 5000, 2000)}`);
+
+</script>

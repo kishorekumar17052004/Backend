@@ -1,6 +1,6 @@
-const obj = (name)=>{
+// const obj = (name)=>{
 
-return name.username;
+// return name.username;
 
-}
-console.log(obj({username:"kishore"}));
+// }
+// console.log(obj({username:"kishore"}));

@@ -1,0 +1,146 @@
+<script>
+
+// Task 1
+ const getStudent = (callback) => {
+
+ return new Promise((resolve)=>{
+
+     setTimeout(()=> resolve("kishore"),2000 )
+ })
+
+};
+getStudent()
+.then((res)=>{
+    console.log(res);
+    
+})
+
+// Task 2
+const getEmployee = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        id: 1,
+        name: "kishore",
+        role: "student"
+      });
+    }, 2000);
+  });
+};
+
+getEmployee()
+  .then((employee) => {
+    console.log(employee.id);
+     console.log(employee.name);
+      console.log(employee.role);
+  })
+
+  //Task 3 
+  const login = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Login Success");
+    }, 2000);
+  });
+};
+
+login()
+  .then((message) => {
+    console.log(message);
+  })
+ 
+ //Task 4
+ const getProducts = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve([
+        "Laptop",
+        "Mobile",
+        "Keyboard"
+      ]);
+    }, 2000);
+  });
+};
+
+getProducts()
+  .then((products) => {
+    console.log(products);
+  })
+ 
+ //Task 5
+ const orderFood = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Pizza Delivered");
+    }, 2000);
+  });
+};
+
+orderFood()
+  .then((message) => {
+    console.log(message);
+  })
+
+//Task 6 
+const getUser = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("User Data");
+    }, 2000);
+  });
+};
+
+const getOrders = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Orders Data");
+    }, 2000);
+  });
+};
+
+const getPayments = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Payments Data");
+    }, 2000);
+  });
+};
+
+getUser()
+  .then((user) => {
+    console.log(user);
+    return getOrders();
+  })
+  .then((orders) => {
+    console.log(orders);
+    return getPayments();
+  })
+  .then((payments) => {
+    console.log(payments);
+    console.log("Completed");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+  // Task 7
+  const payment = () => {
+  return new Promise((resolve, reject) => {
+    const status = false;
+
+    if (status) {
+      resolve("Payment Success");
+    } else {
+      reject("Payment Failed");
+    }
+  });
+};
+
+payment()
+  .then((message) => {
+    console.log(message);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+</script>
